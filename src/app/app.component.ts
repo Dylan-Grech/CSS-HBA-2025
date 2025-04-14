@@ -37,10 +37,6 @@ export class AppComponent  implements OnInit{
   }
 
   addAppointment():void {
-    if(this.userRole == "VET") {
-      alert("Cannot add appointments as a Vet")
-      return
-    }
     this.router.navigate(["/add"])
   }
 

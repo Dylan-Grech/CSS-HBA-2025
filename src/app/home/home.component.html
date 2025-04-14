@@ -37,7 +37,7 @@
             <button class="btn btn-info btn-sm me-1" (click)="viewAppointment(appointment.appointmentId)">View</button>
             <button class="btn btn-warning btn-sm me-1" (click)="updateAppointment(appointment.appointmentId)">Update</button>
             <button 
-              *ngIf="userRole === 'ADMIN' || userRole === 'RECEPTIONIST'" 
+              *ngIf="userRole === 'ADMIN'"
               class="btn btn-danger btn-sm"
               (click)="deleteAppointment(appointment.appointmentId)">
               Delete
