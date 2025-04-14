@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { AuthService } from '../services/auth.service'; 
 import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs'; 
+import { Router } from '@angular/router';  
+
 
 @Component({
   selector: 'app-login',
@@ -17,12 +19,13 @@ export class LoginComponent {
   password: string = '';
   errorMessage: string = '';
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   onSubmit(): void {
     this.authService.login(this.username, this.password).pipe(
       catchError(error => {
         console.error('Login failed', error);
+        console.log(this.username, this.password);
         this.errorMessage = 'Invalid username or password. Please try again.';
         return of(null); 
       })
@@ -30,7 +33,10 @@ export class LoginComponent {
       next: (response) => {
         if (response) {
           console.log('Login successful', response);
-          localStorage.setItem('authToken', response.token); 
+          sessionStorage.setItem('authToken', response.jwtToken); 
+          sessionStorage.setItem('role', response.role);
+
+          this.router.navigate(["/home"])
         }
       },
       error: (error) => {

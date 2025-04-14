@@ -1,0 +1,72 @@
+<div class="container mt-5">
+  <h1 class="mb-4">Update Appointment Details</h1>
+
+  <form [formGroup]="appointmentForm" (ngSubmit)="updateAppointment()">
+    <div class="row g-3">
+      <div class="col-md-6">
+        <label for="appointmentId" class="form-label">Id:</label>
+        <input formControlName="appointmentId" type="text" class="form-control" id="appointmentId" [value]="appointment?.appointmentId" [readonly]="userRole === 'RECEPTIONIST'" />
+      </div>
+
+      <div class="col-md-6">
+        <label for="patientName" class="form-label">Patient Name:</label>
+        <input formControlName="patientName" type="text" class="form-control" id="patientName" [value]="appointment?.patientName" />
+      </div>
+
+      <div class="col-md-6">
+        <label for="animalType" class="form-label">Animal Type:</label>
+        <input formControlName="animalType" type="text" class="form-control" id="animalType" [value]="appointment?.animalType" />
+      </div>
+
+      <div class="col-md-6">
+        <label for="ownerIdCardNumber" class="form-label">Owner ID Card Number:</label>
+        <input formControlName="ownerIdCardNumber" type="text" class="form-control" id="ownerIdCardNumber" [value]="appointment?.ownerIdCardNumber" />
+      </div>
+
+      <div class="col-md-6">
+        <label for="ownerName" class="form-label">Owner Name:</label>
+        <input formControlName="ownerName" type="text" class="form-control" id="ownerName" [value]="appointment?.ownerName" />
+      </div>
+
+      <div class="col-md-6">
+        <label for="ownerSurname" class="form-label">Owner Surname:</label>
+        <input formControlName="ownerSurname" type="text" class="form-control" id="ownerSurname" [value]="appointment?.ownerSurname" />
+      </div>
+
+      <div class="col-md-6">
+        <label for="ownerContactNumber" class="form-label">Owner Contact Number:</label>
+        <input formControlName="ownerContactNumber" type="text" class="form-control" id="ownerContactNumber" [value]="appointment?.ownerContactNumber" />
+      </div>
+
+      <div class="col-md-6">
+        <label for="appointmentDate" class="form-label">Appointment Date:</label>
+        <input formControlName="appointmentDate" type="text" class="form-control" id="appointmentDate" [value]="appointment?.appointmentDate" />
+      </div>
+
+      <div class="col-md-6">
+        <label for="appointmentTime" class="form-label">Appointment Time:</label>
+        <input formControlName="appointmentTime" type="text" class="form-control" id="appointmentTime" [value]="appointment?.appointmentTime" />
+      </div>
+
+      <div class="col-md-6">
+        <label for="appointmentDuration" class="form-label">Appointment Duration (minutes):</label>
+        <input formControlName="appointmentDuration" type="text" class="form-control" id="appointmentDuration" [value]="appointment?.appointmentDuration" />
+      </div>
+
+      <div class="col-md-6">
+        <label for="reasonForAppointment" class="form-label">Reason for Appointment:</label>
+        <input formControlName="reasonForAppointment" type="text" class="form-control" id="reasonForAppointment" [value]="appointment?.reasonForAppointment" />
+      </div>
+
+      <div class="col-md-6">
+        <label for="vetNotes" class="form-label">Vet Notes:</label>
+        <input formControlName="vetNotes" type="text" class="form-control" id="vetNotes" [value]="appointment?.vetNotes" [readonly]="userRole === 'RECEPTIONIST'" />
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <button type="submit" class="btn btn-primary me-2" [disabled]="appointmentForm.invalid">Update Appointment</button>
+      <button type="button" class="btn btn-secondary" (click)="backToHome()">Go Back</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,68 @@
+<div class="container mt-4">
+  <h1 class="mb-4">Appointment Details</h1>
+
+  <form>
+    <div class="row g-3">
+      <div class="col-md-6">
+        <label for="appointmentId" class="form-label">ID:</label>
+        <input type="text" id="appointmentId" class="form-control" [value]="appointment?.appointmentId" readonly />
+      </div>
+      <div class="col-md-6">
+        <label for="patientName" class="form-label">Patient Name:</label>
+        <input type="text" id="patientName" class="form-control" [value]="appointment?.patientName" readonly />
+      </div>
+
+      <div class="col-md-6">
+        <label for="animalType" class="form-label">Animal Type:</label>
+        <input type="text" id="animalType" class="form-control" [value]="appointment?.animalType" readonly />
+      </div>
+      <div class="col-md-6">
+        <label for="ownerIdCardNumber" class="form-label">Owner ID Card Number:</label>
+        <input type="text" id="ownerIdCardNumber" class="form-control" [value]="appointment?.ownerIdCardNumber" readonly />
+      </div>
+
+      <div class="col-md-6">
+        <label for="ownerName" class="form-label">Owner Name:</label>
+        <input type="text" id="ownerName" class="form-control" [value]="appointment?.ownerName" readonly />
+      </div>
+      <div class="col-md-6">
+        <label for="ownerSurname" class="form-label">Owner Surname:</label>
+        <input type="text" id="ownerSurname" class="form-control" [value]="appointment?.ownerSurname" readonly />
+      </div>
+
+      <div class="col-md-6">
+        <label for="ownerContactNumber" class="form-label">Owner Contact Number:</label>
+        <input type="text" id="ownerContactNumber" class="form-control" [value]="appointment?.ownerContactNumber" readonly />
+      </div>
+
+      <div class="col-md-6">
+        <label for="appointmentDate" class="form-label">Appointment Date:</label>
+        <input type="text" id="appointmentDate" class="form-control" [value]="appointment?.appointmentDate" readonly />
+      </div>
+
+      <div class="col-md-6">
+        <label for="appointmentTime" class="form-label">Appointment Time:</label>
+        <input type="text" id="appointmentTime" class="form-control" [value]="appointment?.appointmentTime" readonly />
+      </div>
+
+      <div class="col-md-6">
+        <label for="appointmentDuration" class="form-label">Appointment Duration:</label>
+        <input type="text" id="appointmentDuration" class="form-control" [value]="appointment?.appointmentDuration + ' minutes'" readonly />
+      </div>
+
+      <div class="col-md-12">
+        <label for="reasonForAppointment" class="form-label">Reason for Appointment:</label>
+        <input type="text" id="reasonForAppointment" class="form-control" [value]="appointment?.reasonForAppointment" readonly />
+      </div>
+
+      <div class="col-md-12">
+        <label for="vetNotes" class="form-label">Vet Notes:</label>
+        <input type="text" id="vetNotes" class="form-control" [value]="appointment?.vetNotes" readonly />
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <button type="button" class="btn btn-secondary" (click)="backToHome()">Go Back</button>
+    </div>
+  </form>
+</div>
